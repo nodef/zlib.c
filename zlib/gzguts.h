@@ -2,7 +2,7 @@
  * Copyright (C) 2004-2025 Mark Adler
  * For conditions of distribution and use, see copyright notice in zlib.h
  */
-
+#pragma once  // Ensure single inclusion (@wolfram77)
 #ifdef _LARGEFILE64_SOURCE
 #  ifndef _LARGEFILE_SOURCE
 #    define _LARGEFILE_SOURCE 1
@@ -164,6 +164,10 @@
 /* values for gz_state how */
 #define LOOK 0      /* look for a gzip header */
 #define COPY 1      /* copy input directly */
+// Undefine GZIP if already defined to avoid conflicts (@wolfram77)
+#ifdef GZIP
+#undef GZIP
+#endif
 #define GZIP 2      /* decompress a gzip stream */
 
 /* internal gzip file state data structure */

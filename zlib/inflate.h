@@ -2,7 +2,7 @@
  * Copyright (C) 1995-2019 Mark Adler
  * For conditions of distribution and use, see copyright notice in zlib.h
  */
-
+#pragma once  // Ensure single inclusion (@wolfram77)
 /* WARNING: this file should *not* be used by applications. It is
    part of the implementation of the compression library and is
    subject to change. Applications should only use zlib.h.
@@ -14,6 +14,11 @@
    should be left enabled. */
 #ifndef NO_GZIP
 #  define GUNZIP
+#endif
+
+// Undefine COPY if already defined to avoid conflicts (@wolfram77)
+#ifdef COPY
+#undef COPY
 #endif
 
 /* Possible inflate modes between inflate() calls */

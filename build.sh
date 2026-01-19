@@ -39,12 +39,11 @@ echo ""
 
 # Test the project
 test() {
-echo "Running 01-simple ..."
-clang++ -std=c++20 -I. -o 01.exe examples/01-simple.cxx   && ./01.exe && echo -e "\n"
-echo "Running 02-pipeline ..."
-clang++ -std=c++20 -I. -o 02.exe examples/02-pipeline.cxx && ./02.exe && echo -e "\n"
+echo "Running 01-zpipe ..."
+clang -I. -o 01.exe examples/01-zpipe.c   && cat zlib.h | ./01.exe && echo -e "\n"
+echo "Running 02-fitblk ..."
+clang -I. -o 02.exe examples/02-fitblk.c  && cat zlib.h | ./02.exe 512 && echo -e "\n"
 }
-
 
 # Main script
 if [[ "$1" == "test" ]]; then test
