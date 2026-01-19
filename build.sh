@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
 # Fetch the latest version of the library
 fetch() {
-if [ -d "taskflow" ]; then return; fi
-URL="https://github.com/taskflow/taskflow/archive/refs/heads/master.zip"
+if [ -d "zlib" ]; then return; fi
+URL="https://github.com/madler/zlib/archive/refs/heads/develop.zip"
 ZIP="${URL##*/}"
-DIR="taskflow-master"
+DIR="zlib-develop"
 mkdir -p .build
 cd .build
 
@@ -27,10 +27,12 @@ fi
 cd ..
 
 # Copy the libs to the package directory
-echo "Copying libs to taskflow/ ..."
-rm -rf taskflow
-mkdir -p taskflow
-cp -rf ".build/$DIR/taskflow/"* taskflow/
+echo "Copying libs to zlib/ ..."
+rm -rf zlib
+mkdir -p zlib
+cp -f ".build/$DIR/"*.c    zlib/
+cp -f ".build/$DIR/"*.h    zlib/
+cp -f ".build/$DIR/"*.h.in zlib/
 echo ""
 }
 
