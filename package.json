@@ -1,28 +1,25 @@
 {
-  "name": "taskflow.cxx",
-  "version": "4.2026.4",
-  "description": "A General-purpose Task-parallel Programming System using Modern C++; Tsung-Wei Huang (2018).",
+  "name": "zlib.c",
+  "version": "1.2026.1",
+  "description": "A massively spiffy yet delicately unobtrusive compression library; Mark Adler (2011).",
   "keywords": [
-    "c++",
+    "c",
     "library",
-    "taskflow",
-    "parallel",
-    "concurrency",
-    "multithreading",
-    "task graph",
-    "thread pool"
+    "compression",
+    "decompression",
+    "zlib"
   ],
-  "homepage": "https://github.com/nodef/taskflow.cxx#readme",
+  "homepage": "https://github.com/nodef/zlib.c#readme",
   "bugs": {
-    "url": "https://github.com/nodef/taskflow.cxx/issues"
+    "url": "https://github.com/nodef/zlib.c/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/nodef/taskflow.cxx.git"
+    "url": "git+https://github.com/nodef/zlib.c.git"
   },
-  "license": "MIT",
+  "license": "Zlib",
   "author": "wolfram77@gmail.com",
-  "main": "taskflow.hpp",
+  "main": "zlib.c",
   "scripts": {
     "test": "bash build.sh test"
   }
