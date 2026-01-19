@@ -1,4 +1,4 @@
-ZLIB DATA COMPRESSION LIBRARY
+# ZLIB DATA COMPRESSION LIBRARY
 
 zlib 1.3.1.2 is a general purpose data compression library.  All the code is
 thread safe (though see the FAQ for caveats).  The data format used by the zlib
@@ -26,60 +26,79 @@ verify that you have the latest version of zlib; otherwise get the latest
 version and check whether the problem still exists or not.
 
 PLEASE read the zlib FAQ http://zlib.net/zlib_faq.html before asking for help.
-
-Mark Nelson <markn@ieee.org> wrote an article about zlib for the Jan.  1997
+- Mark Nelson <markn@ieee.org> wrote an article about zlib for the Jan.  1997
 issue of Dr.  Dobb's Journal; a copy of the article is available at
 https://zlib.net/nelson/ .
-
-The changes made in version 1.3.1.2 are documented in the file ChangeLog.
-
-Unsupported third party contributions are provided in directory contrib/ .
-
-zlib is available in Java using the java.util.zip package. Follow the API
+- The changes made in version 1.3.1.2 are documented in the file ChangeLog.
+- Unsupported third party contributions are provided in directory contrib/ .
+- zlib is available in Java using the java.util.zip package. Follow the API
 Documentation link at: https://docs.oracle.com/search/?q=java.util.zip .
-
-A Perl interface to zlib and bzip2 written by Paul Marquess <pmqs@cpan.org>
+- A Perl interface to zlib and bzip2 written by Paul Marquess <pmqs@cpan.org>
 can be found at https://github.com/pmqs/IO-Compress .
-
-A Python interface to zlib written by A.M. Kuchling <amk@amk.ca> is
+- A Python interface to zlib written by A.M. Kuchling <amk@amk.ca> is
 available in Python 1.5 and later versions, see
 http://docs.python.org/library/zlib.html .
-
-zlib is built into tcl: http://wiki.tcl.tk/4610 .
-
-An experimental package to read and write files in .zip format, written on top
+- zlib is built into tcl: http://wiki.tcl.tk/4610 .
+- An experimental package to read and write files in .zip format, written on top
 of zlib by Gilles Vollant <info@winimage.com>, is available in the
 contrib/minizip directory of zlib.
 
 
 Notes for some targets:
-
 - For Windows DLL versions, please see win32/DLL_FAQ.txt
-
 - For 64-bit Irix, deflate.c must be compiled without any optimization. With
   -O, one libpng test fails. The test works in 32 bit mode (with the -n32
   compiler flag). The compiler bug has been reported to SGI.
-
 - zlib doesn't work with gcc 2.6.3 on a DEC 3000/300LX under OSF/1 2.1 it works
   when compiled with cc.
-
 - On Digital Unix 4.0D (formerly OSF/1) on AlphaServer, the cc option -std1 is
   necessary to get gzprintf working correctly. This is done by configure.
-
 - zlib doesn't work on HP-UX 9.05 with some versions of /bin/cc. It works with
   other compilers. Use "make test" to check your compiler.
-
 - For PalmOs, see http://palmzlib.sourceforge.net/
 
 
-Acknowledgments:
+## Installation:
+
+Run:
+
+```bash
+$ npm i zlib.c
+```
+
+And then include `zlib.h` as follows:
+
+```c
+// main.c
+#include <zlib.h>
+
+int main() { /* ... */ }
+```
+
+Finally, compile while adding the path `node_modules/zlib.c` to your compiler's include paths.
+
+```bash
+$ clang -I./node_modules/zlib.c main.c  # or, use gcc
+$ gcc   -I./node_modules/zlib.c main.c
+```
+
+You may also use a simpler approach with the [cpoach](https://www.npmjs.com/package/cpoach.sh) tool, which automatically adds the necessary include paths of all the installed dependencies for your project.
+
+```bash
+$ cpoach clang main.c  # or, use gcc
+$ cpoach gcc   main.c
+```
+
+
+## Acknowledgments:
 
   The deflate format used by zlib was defined by Phil Katz.  The deflate and
   zlib specifications were written by L.  Peter Deutsch.  Thanks to all the
   people who reported problems and suggested various improvements in zlib; they
   are too numerous to cite here.
 
-Copyright notice:
+
+## Copyright notice:
 
  (C) 1995-2025 Jean-loup Gailly and Mark Adler
 
@@ -113,3 +132,12 @@ any third parties.
 If you redistribute modified sources, we would appreciate that you include in
 the file ChangeLog history information documenting your changes.  Please read
 the FAQ for more information on the distribution of modified source versions.
+
+<br>
+<br>
+
+
+[![](https://raw.githubusercontent.com/qb40/designs/gh-pages/0/image/11.png)](https://wolfram77.github.io)<br>
+[![SRC](https://img.shields.io/badge/src-repo-green?logo=Org)](https://github.com/madler/zlib)
+[![ORG](https://img.shields.io/badge/org-nodef-green?logo=Org)](https://nodef.github.io)
+![](https://ga-beacon.deno.dev/G-RC63DPBH3P:SH3Eq-NoQ9mwgYeHWxu7cw/github.com/nodef/zlib.c)
